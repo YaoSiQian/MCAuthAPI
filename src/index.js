@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+require("dotenv").config();
+const PORT = process.env.PORT;
+const TOKEN = process.env.TOKEN;
 
 const activeCodes = new Object();
 
 app.post("/newcode", (req, res) => {
-  if (req.headers["token"] == "omgverysecureauthtoken") {
+  if (req.headers["token"] == TOKEN) {
     activeCodes[`${req.headers["code"]}`] = req.headers["uuid"];
     console.log(
       `Added ${req.headers["code"]} with uuid: ${req.headers["uuid"]}`
@@ -37,6 +40,6 @@ app.get("/auth", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is running on port 3000");
 });
