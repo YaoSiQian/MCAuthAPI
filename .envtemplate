@@ -1,3 +1,3 @@
 # Port 3000 is default (feel free to change if you know what you are doing)
 PORT=3000
-TOKEN=<put any secure alphanumeric string to use when posting codes to api>
+TOKEN=verysecuretoken
