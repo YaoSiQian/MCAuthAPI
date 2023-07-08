@@ -16,7 +16,7 @@ app.post("/newcode", (req, res) => {
     setTimeout(() => {
       delete activeCodes[req.headers["code"]];
       console.log(
-        `Code ${req.headers["code"]} timed out with uuid: ${req.headers["uuid"]}`
+        `${req.headers["code"]} timed out with uuid: ${req.headers["uuid"]}`
       );
     }, 300000);
     res.status(201).send();
