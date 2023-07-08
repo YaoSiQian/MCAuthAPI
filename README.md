@@ -1,6 +1,6 @@
 # MCAuthAPI
 
-A simple minecraft account linker for developers. Allow your users to verify that they own said minecraft accounts. Companion [Minecraft Plugin](https://github.com/imabanana80/MCAuth) required. See installation guide below on how to use it.
+A simple minecraft account linker for developers. Allow your users to verify that they own said minecraft accounts. Companion [Minecraft Plugin](https://github.com/imabanana80/MCAuth) required. See installation guide below on how to set everything up.
 
 ## Installation & Setup Guide
 
