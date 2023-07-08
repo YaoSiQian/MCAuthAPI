@@ -8,7 +8,7 @@ For this guide, I will be using an Ubuntu 22.04 Linux VPS to host the API.
 
 The first part of the guide will take you through setting up the API, and the second part will take you through setting up the minecraft server/plugin, and the last part will tell how how to implement it into your own programs.
 
-#### Part 1.1: Downloading dependencies
+### Part 1.1: Downloading dependencies
 
 You will need nodejs (and npm) and pm2 for the API to work.
 
@@ -20,7 +20,7 @@ To install pm2 run the following:
 npm install pm2 -g
 ```
 
-#### Part 1.2: Clone this repository
+### Part 1.2: Clone this repository
 
 I reccomend creating a directory to place all the files in.
 
@@ -34,7 +34,7 @@ Clone this repository and navigate into it
 git clone https://github.com/Imabanana80/MCAuthAPI && cd MCAuthAPI/
 ```
 
-#### Part 1.3: Installing node packages
+### Part 1.3: Installing node packages
 
 Install all the required node packages
 
@@ -44,7 +44,7 @@ npm install
 
 this should automatically install both expressjs and all other needed dependencies
 
-#### Part 1.4: Configuring port and token
+### Part 1.4: Configuring port and token
 
 Rename .envtemplate to .env
 
@@ -65,7 +65,7 @@ PORT=3000
 TOKEN=yourtoken
 ```
 
-#### Part 1.5: Configuring the firewall
+### Part 1.5: Configuring the firewall
 
 You may need to complete this step for the api to work.
 
@@ -73,7 +73,7 @@ You may need to complete this step for the api to work.
 ufw allow 3000
 ```
 
-#### Part 1.6: Starting the API
+### Part 1.6: Starting the API
 
 Start the API using pm2. For a more detailed guide on how to use pm2, check out the [official pm2 documentation](https://pm2.keymetrics.io/docs/usage/quick-start/).
 
@@ -85,7 +85,7 @@ this assumes that you are running it in ./MCAuthAPI
 
 Congratulations! the API should be working now.
 
-#### Part 2.1 Downloading & Installing the companion MCAuth Plugin
+### Part 2.1 Downloading & Installing the companion MCAuth Plugin
 
 Download the MCAuth plugin .jar from https://github.com/Imabanana80/MCAuth/releases/latest
 
@@ -93,7 +93,7 @@ Drag the `MCAuth-1.x.x.jar` into your server's /plugins directory and start the 
 
 Do note that running /link at this time would result in error's being thrown.
 
-#### Part 2.2 Configuring the plugin
+### Part 2.2 Configuring the plugin
 
 The plugin should have generated a /MCAuth directory in your server's plugins folder, which should contain a config.yml file. Open this file in your preferred text editor.
 
@@ -111,7 +111,7 @@ You can now start your server, and /link should work.
 
 Congratulations! You have finished setting up both the API and plugin
 
-#### Part 3 How to implement the auth features into your program
+### Part 3 How to implement the auth features into your program
 
 Now that you have hosted the API and minecraft server, you can allow your users to join the minecraft server and run the command `/link`
 
