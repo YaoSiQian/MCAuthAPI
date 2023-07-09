@@ -125,7 +125,7 @@ In your program, you would request that they give you this code, and you can sen
 }
 ```
 
-If the code they gave you is valid, you will their minecraft uuid.
+If the code they gave you is valid, you will recieve their minecraft uuid.
 
 ```
 {
