@@ -87,7 +87,7 @@ Congratulations! the API should be working now.
 
 ### Part 2.1 Downloading & Installing the companion MCAuth Plugin
 
-Download the MCAuth plugin .jar from https://github.com/Imabanana80/MCAuth/releases/latest
+Download the MCAuth plugin .jar from https://modrinth.com/plugin/mcauthplugin
 
 Drag the `MCAuth-1.x.x.jar` into your server's /plugins directory and start the server.
 
