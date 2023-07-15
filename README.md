@@ -16,7 +16,7 @@ To install nodejs (and npm) you can follow [this guide](https://www.digitalocean
 
 To install pm2 run the following:
 
-```
+```bash
 npm install pm2 -g
 ```
 
@@ -24,13 +24,13 @@ npm install pm2 -g
 
 I reccomend creating a directory to place all the files in.
 
-```
+```bash
 mkdir mcauthapi && cd mcauthapi/
 ```
 
 Clone this repository and navigate into it
 
-```
+```bash
 git clone https://github.com/Imabanana80/MCAuthAPI && cd MCAuthAPI/
 ```
 
@@ -38,7 +38,7 @@ git clone https://github.com/Imabanana80/MCAuthAPI && cd MCAuthAPI/
 
 Install all the required node packages
 
-```
+```bash
 npm install
 ```
 
@@ -48,19 +48,19 @@ this should automatically install both expressjs and all other needed dependenci
 
 Rename .envtemplate to .env
 
-```
+```bash
 mv .envtemplate .env
 ```
 
 Open the .env file with nano
 
-```
+```bash
 nano .env
 ```
 
 Replace "verysecuretoken" with a token of choice. Save your token somewhere secure as we will need it in part 2. If you know what you are doing, you can configure the port too. By default it uses port 3000.
 
-```
+```dotenv
 PORT=3000
 TOKEN=yourtoken
 ```
@@ -69,7 +69,7 @@ TOKEN=yourtoken
 
 You may need to complete this step for the api to work.
 
-```
+```bash
 ufw allow 3000
 ```
 
@@ -77,7 +77,7 @@ ufw allow 3000
 
 Start the API using pm2. For a more detailed guide on how to use pm2, check out the [official pm2 documentation](https://pm2.keymetrics.io/docs/usage/quick-start/).
 
-```
+```bash
 pm2 start src/index.js
 ```
 
@@ -91,7 +91,7 @@ Download the MCAuth plugin .jar from https://modrinth.com/plugin/mcauthplugin
 
 Drag the `MCAuth-1.x.x.jar` into your server's /plugins directory and start the server.
 
-Do note that running /link at this time would result in error's being thrown.
+Do note that running `/link` at this time would result in error's being thrown.
 
 ### Part 2.2 Configuring the plugin
 
@@ -102,12 +102,12 @@ Make sure you stop the server before proceeding
 Replace the placeholder url with your api's linux server ip and port, along with the route as shown below.
 Replace the placeholder token with the token you have previously configured.
 
-```
+```yml
 url: http://45.76.162.214:3000/newcode
 token: yourtoken
 ```
 
-You can now start your server, and /link should work.
+You can now start your server, and `/link` should work.
 
 Congratulations! You have finished setting up both the API and plugin
 
@@ -119,7 +119,7 @@ After running that command, they will be prompted to copy a code that will expir
 
 In your program, you would request that they give you this code, and you can send a request to your api's `/auth` endpoint (`http://45.76.162.214:3000/auth` in my case) with the code as the body:
 
-```
+```json
 {
 	"code": "38e9c945"
 }
@@ -127,7 +127,7 @@ In your program, you would request that they give you this code, and you can sen
 
 If the code they gave you is valid, you will recieve their minecraft uuid.
 
-```
+```json
 {
 	"code": "38e9c945",
 	"uuid": "c4b04ee5c09041f2b34e8e302c626d67"
@@ -142,7 +142,7 @@ You can then parse this data and save it in your database or use it however you 
 
 ### Coming soon...
 
-- Auth token for /auth endpoint
+- Auth token for `/auth` endpoint
 - Move the plugin download to modrinth
 - `/link` command cooldown
 - Configurable code expiration
